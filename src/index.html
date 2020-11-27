@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="content">
+      <div id = "error-message-container">
+        <div id = "error-message">
+          <p>Please don't leave the fields empty!</p>
+          <div id="error-message-button-container">
+            <p id="error-message-button">OK</p>
+          </div>
+        </div>
+      </div>
+      <div id="project-panel">
+        <h3 id="project-header">Projects</h3>
+        <div class="divider"></div>
+        <div class="project-container"></div>
+        <div id="add-project-container">
+          <div id="add-project">
+            <p id="add-project-text"><span id="plus-icon">+</span> Add Project</p>
+          </div>
+        </div>
+      </div>
+      <div id="add-project-window-container">
+        <div id="add-project-window">
+          <label class="add-project-label" for="project-name">Project Name</label>
+          <input class="add-project-input" id="project-name" type="text" placeholder="Name of Project/Task">
+          <label class="add-project-label" for="project-description">Project Description</label>
+          <textarea class="add-project-input" id="project-description" type="text" placeholder="Description of Project/Task"></textarea>
+          <div id="add-project-button-container">
+            <p id="add-project-button">Add Project</p>
+            <p id="add-project-cancel-button">Cancel</p>
+          </div>
+        </div>
+      </div>
+      <div id="main-panel">
+        <div id="project-info-container">
+          <div id="project-info">
+            <div id="project-name-main">
+              Example Project
+            </div>
+            <div id="project-description-main">
+              This is a test project, hold your anoos.
+            </div>
+            </div>
+          <div id="edit-project-info-icon">
+            Edit
+            <img src="assets/imgs/pen.svg" id="edit-image">
+          </div>
+        </div>
+        <div id="edit-project-info-container">
+          <input class="edit-project-details" id="edit-project-name" type="text" placeholder="Name of Project/Task">
+          <input class="edit-project-details" id="edit-project-description" type="text" placeholder="Description of Project/Task">
+          <div id="edit-project-button-container">
+            <p id="edit-project-button">Submit</p>
+            <p id="edit-project-cancel-button">Cancel</p>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div id="tasks-container"></div>
+        <div class="to-do-add">
+          <div class="left-to-do-add">
+            <input class="add-to-do-name" type="text" placeholder="To-Do Name">
+          </div>
+          <div class="right-to-do-add">
+            <input class="add-to-do-date" type="date">
+            <div class="add-todo-button-container">
+              <p class="add-todo-button">Submit</p>
+              <p class="add-todo-cancel-button">Cancel</p>
+            </div>    
+          </div>
+        </div>
+        <div id="add-task-container">
+          <div id="add-task">
+            <p id="add-task-text"><span id="plus-icon-task">+</span> Add Task</p>
+          </div>
+        </div>    
+      </div>
+    </div>
+  </body>
+</html>

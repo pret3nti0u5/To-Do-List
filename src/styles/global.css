@@ -1,0 +1,614 @@
+@font-face{
+    font-family: "sf-bold";
+    src: url(../assets/fonts/SF-Pro-Display-Bold.otf);
+}
+
+@font-face{
+    font-family: "sf-medium";
+    src: url(../assets/fonts/SF-Pro-Display-Medium.otf);
+}
+
+@font-face{
+    font-family: "sf-regular";
+    src: url(../assets/fonts/SF-Pro-Display-Regular.otf);
+}
+
+@font-face{
+    font-family: "sf-light";
+    src: url(../assets/fonts/SF-Pro-Display-Light.otf);
+}
+
+@font-face{
+    font-family: "sf-thin";
+    src: url(../assets/fonts/SF-Pro-Display-Thin.otf);
+}
+
+html, body, #content{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+#content{
+    display: flex;
+}
+
+#project-panel{
+    height: 100%;
+    width: 25vw;
+    background-color: #373c3f;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+    padding: 70px 40px;
+    box-sizing: border-box;
+}
+
+#project-panel::-webkit-scrollbar {
+    display: none;
+}
+
+#main-panel{
+    height: 100%;
+    width: 75vw;
+    background-color: #2f3437;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+    padding: 50px 40px;
+    box-sizing: border-box;
+}
+
+#main-panel::-webkit-scrollbar {
+    display: none;
+}
+
+#project-header{
+    font-family: 'sf-bold';
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.divider{
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.projects{
+    font-family: 'sf-light';
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.projects:hover{
+    background-color: #444a4d;
+}
+
+.active{
+    background-color: #444a4d;
+    color: white;
+}
+
+.trash-image{
+    width: 24px;
+}
+
+.trash-image:hover{
+    transform: scale(1.5);
+    transition: all 0.06s ease-out;
+}
+
+#add-project-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+#add-project {
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#add-project:hover{
+    background-color: #444a4d;
+}
+
+#add-project-text{
+    font-size: 20px;
+    font-family: 'sf-medium';
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+#plus-icon{
+    font-size: 24px;
+    font-family: 'sf-bold';
+    margin-left: 12px;
+    margin-right: 8px;
+    color: #ff3f3f;
+}
+
+#add-task-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+#add-task {
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#add-task:hover{
+    background-color: #444a4d;
+}
+
+#add-task-text{
+    font-size: 20px;
+    font-family: 'sf-medium';
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+#plus-icon-task{
+    font-size: 24px;
+    font-family: 'sf-bold';
+    margin-left: 12px;
+    margin-right: 8px;
+    color: #ff3f3f;
+}
+
+#add-project-window-container{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#add-project-window{
+    width: 960px;
+    height: 510px;
+    background-color: rgb(63, 68, 71);
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.2) 0px 3px 6px, rgba(15, 15, 15, 0.4) 0px 9px 24px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+.add-project-label{
+    font-family: 'sf-bold';
+    font-size: 64px;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+}
+
+.add-project-input{
+    margin-bottom: 30px;
+    background-color: #444a4d;
+    border: none;
+    font-family: 'sf-light';
+    color: white;
+    font-size: 32px;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+#add-project-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-project-button{
+    font-size: 32px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #00cd00;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -8px;
+}
+
+#add-project-cancel-button{
+    font-size: 32px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #ff2d4a;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -8px;
+    margin-left: 48px;
+    width: 170px;
+    display: flex;
+    justify-content: center;
+}
+
+#project-info-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#project-name-main {
+    font-size: 40px;
+    font-family: 'sf-bold';
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+}
+
+#project-description-main {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'sf-light';
+}
+
+#edit-project-info-icon {
+    position: relative;
+    top: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'sf-light';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#edit-project-info-icon:hover{
+    text-decoration: underline;
+}
+
+#edit-image {
+    width: 16px;
+    margin-left: 12px;
+}
+
+.to-do {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.to-do:hover {
+    transform: scale(1.005);
+    box-shadow: 3px 3px 5px 2px rgba(0,0,0,0.2);
+    transition: all 0.1s ease-out;
+}
+
+.to-do-add {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.4);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.to-do-add:hover{
+    transform: scale(1.005);
+    box-shadow: 3px 3px 5px 2px rgba(0,0,0,0.2);
+    transition: all 0.1s ease-out;
+}
+
+.left-to-do {
+    display: flex;
+}
+
+.right-to-do{
+    display: flex;
+}
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255,255,255,0.4);
+    cursor: pointer;
+}
+
+.checked{
+    background-color: #7AF76E;
+    background-image: url('../assets/imgs/tick.svg');
+    background-position: 50% 50%;
+    background-size: 15px;
+    background-repeat: no-repeat;
+}
+
+.task-name {
+    font-size: 23px;
+    font-family: 'sf-light';
+    color: rgba(255,255,255,0.9);
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.task-time {
+    font-size: 18px;
+    font-family: sf-light;
+    color: rgba(255,255,255,0.9);
+    cursor: pointer;
+}
+
+.task-edit {
+    width: 16px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.task-edit:hover{
+    transform: scale(1.2);
+}
+
+.task-delete {
+    width: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.task-delete:hover{
+    transform: scale(1.2);
+}
+
+#edit-project-info-container {
+    display: none;
+    flex-direction: column;
+}
+
+.edit-project-details {
+    margin-bottom: 5px;
+    background-color: #444a4d;
+    border: none;
+    font-family: 'sf-light';
+    color: white;
+    font-size: 32px;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+#edit-project-button-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#edit-project-button{
+    font-size: 24px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #00cd00;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+#edit-project-cancel-button{
+    font-size: 24px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #ff2d4a;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.left-to-do-edit{
+    display: none;
+    width: 58%;
+}
+
+.left-to-do-add{
+    display: flex;
+    width: 58%;
+}
+
+.to-do-name{
+    background-color: #444a4d;
+    border: none;
+    font-family: 'sf-light';
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+.add-to-do-name{
+    background-color: #444a4d;
+    border: none;
+    font-family: 'sf-light';
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+.right-to-do-edit{
+    display: none;
+}
+
+.right-to-do-add{
+    display: flex;
+}
+
+.to-do-date{
+    background-color: #444a4d;
+    border: none;
+    font-family: 'sf-light';
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.add-to-do-date{
+    background-color: #444a4d;
+    border: none;
+    font-family: 'sf-light';
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.edit-todo-button-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.edit-todo-button{
+    font-size: 16px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #00cd00;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.edit-todo-cancel-button{
+    font-size: 16px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #ff2d4a;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.add-todo-button-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.add-todo-button{
+    font-size: 16px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #00cd00;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.add-todo-cancel-button{
+    font-size: 16px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #ff2d4a;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+#error-message-container {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#error-message {
+    font-size: 34px;
+    color: white;
+    width: 640px;
+    height: 360px;
+    background-color: rgb(63, 68, 71);
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.2) 0px 3px 6px, rgba(15, 15, 15, 0.4) 0px 9px 24px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-family: 'sf-bold';
+}
+
+#error-message-button-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#error-message-button{
+    font-size: 24px;
+    font-family: 'sf-bold';
+    color: white;
+    background-color: #00cd00;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    width: 84px;
+    display: flex;
+    justify-content: center;
+}
