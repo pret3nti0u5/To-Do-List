@@ -2,7 +2,7 @@
 
 ### This is a simple app for keeping track of your To-Dos for different projects
 
-<div align="center"><img src="" alt="image" width="900" /></div>
+<div align="center"><img src="https://user-images.githubusercontent.com/57453561/100431710-8b110500-30be-11eb-8bd5-efa47196d808.png" alt="image" width="900" /></div>
 
 **Note:** This website works best with high res screens (1080p and up). Check the [improvements section](#improvements) for future updates.
 
